@@ -1,5 +1,6 @@
 import hashlib
-import secrets
+import random
+import string
 
 def hash_and_average(*values):
     # Hash each input value
@@ -10,8 +11,12 @@ def hash_and_average(*values):
     average_hash = total_hash // len(hashed_values)
     
     # Use the average hash as the seed for random password generation
-    secrets.seed(average_hash)
-    password = secrets.token_urlsafe(12)  # Adjust the length as needed
+    random.seed(average_hash)
+    
+    # Generate a random password
+    password_length = 24  # Adjust the length as needed
+    password_characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(password_characters) for _ in range(password_length))
     
     return password
 
