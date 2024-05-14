@@ -10,4 +10,15 @@ A drawback is that anyone who knows your username, category, and password can re
 requires more variables than just your password for your password database. So, use with caution, but it certainly beats 
 using weak passwords.
 
-It can also NOT store passwords because it does not store but generate your passwords. 
+It also CAN NOT store passwords because it does not store but generate your passwords as described below.
+
+HOW IT WORKS:
+This software hashes the category-, the username- and the password-string, averages those hashes and uses that
+to seed the random generator which then creates your passwords. This results in the same passwords every time. 
+The name of the strings(e.g. category, password and username) do not really matter, it matters that they do not 
+need to be fancy, they just need to be varied, limiting the amount of stuff you have to remember in an effort to
+make it less likely to loose your access to your passwords.
+
+HOW TO USE IT:
+Run the python file on the command line and make sure you have all the necessary libraries installed(string, hash, random). 
+
