@@ -23,7 +23,7 @@ def hash_and_average(*values):
 def main():
     username = input("Enter your username: ")
     password_category = input("Enter the password category (e.g., email, website): ")
-    password = hash_and_average(username, password_category, input("Enter your password: "))
+    password = hash_and_average(username, password_category, input("Enter your main password: "))
     
     print(f"Generated password: {password}")
 
